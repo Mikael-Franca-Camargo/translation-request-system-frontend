@@ -21,8 +21,7 @@ Frontend for the **Translation Request Management System** built with **React** 
 ## ✨ Main Features
 
 - **Form for submitting translation requests** (Requester Name, Word Count).  
-- **List of translation requests**: Shows existing requests fetched from the backend.  
-- **Approve button**: Allows users to approve translation requests.  
+- **List of translation requests**: Shows existing requests fetched from the backend.    
 - **Error handling**: Displays user-friendly error messages for API calls.  
 - **Internationalization**: Supports UI messages in multiple languages (English/Portuguese).
 
@@ -130,7 +129,6 @@ Your React app should now be running at `http://localhost:3000`.
 
 ## 🛠 Next Steps
 
-- **Connect frontend with backend**: Ensure that the backend Spring Boot API is running on `http://localhost:8080` and that CORS is enabled in the Spring Boot configuration.
 - **Implement routing**: Add more pages for details, approval, etc., using React Router.
 - **Improve error handling**: Show better error messages for failed API requests or form validation errors.
 - **Add authentication/authorization**: Integrate authentication (e.g., JWT) if needed.
