@@ -129,10 +129,10 @@ Your React app should now be running at `http://localhost:3000`.
 
 ## 🛠 Next Steps
 
-- **Implement routing**: Add more pages for details, approval, etc., using React Router.
-- **Improve error handling**: Show better error messages for failed API requests or form validation errors.
-- **Add authentication/authorization**: Integrate authentication (e.g., JWT) if needed.
-- **Deploy both frontend and backend**: Deploy the frontend (React app) and backend (Spring Boot) to a cloud platform like Heroku, AWS, or Vercel.
+- Implement routing: Add more pages for details, approval, etc., using React Router.
+- Improve error handling: Show better error messages for failed API requests or form validation errors.
+- Add authentication/authorization: Integrate authentication (e.g., JWT) if needed.
+- Deploy both frontend and backend: Deploy the frontend (React app) and backend (Spring Boot) to a cloud platform like Heroku, AWS, or Vercel.
 
 ---
 
