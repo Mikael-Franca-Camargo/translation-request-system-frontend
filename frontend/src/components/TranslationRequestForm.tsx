@@ -6,14 +6,20 @@ const TranslationRequestForm: React.FC = () => {
   const [wordCount, setWordCount] = useState(0);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    if (name.trim() === '' || wordCount <= 0) {
-      setError('Please provide a valid name and word count.');
-      return;
-    }
+  if (wordCount <= 0) {
+    setError('Word count must be a positive number.');
+    return;
+  }
 
+  if (name.trim() === '') {
+    setError('Please provide a valid name.');
+    return;
+  }
+
+  try {
     const result = await createTranslationRequest(name, wordCount);
     if (result) {
       alert('Translation request created successfully');
@@ -23,14 +29,18 @@ const TranslationRequestForm: React.FC = () => {
     } else {
       setError('Failed to create translation request.');
     }
-  };
+  } catch (error) {
+    setError('There was an error creating the translation request.');
+  }
+};
+
 
   return (
     <div>
       <h2>Create a Translation Request</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name:</label>
+          <label>Name: </label>
           <input
             type="text"
             value={name}
@@ -39,7 +49,7 @@ const TranslationRequestForm: React.FC = () => {
           />
         </div>
         <div>
-          <label>Word Count:</label>
+          <label>Word Count: </label>
           <input
             type="number"
             value={wordCount}

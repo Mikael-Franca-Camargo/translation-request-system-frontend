@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { getAllTranslationRequests } from './api/api';
-import TranslationRequestForm from './TranslationRequestForm';
+import TranslationRequestForm from './components/TranslationRequestForm';
 
 const App: React.FC = () => {
   const [translationRequests, setTranslationRequests] = useState([]);
