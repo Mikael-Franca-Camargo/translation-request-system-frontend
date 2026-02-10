@@ -2,6 +2,12 @@ import axios from 'axios';
 
 const API_URL = "http://localhost:8080/translation-requests";
 
+export interface TranslationRequest {
+  id: number;
+  requesterName: string;
+  wordCount: number;
+  status: 'CREATED' | 'APPROVED';
+}
 
 export const createTranslationRequest = async (requesterName: string, wordCount: number) => {
   try {
@@ -46,4 +52,24 @@ export const approveTranslationRequest = async (id: number) => {
   }
 };
 
+export const updateTranslationRequest = async (id: number, requesterName: string, wordCount: number): Promise<TranslationRequest> => {
+  try {
+    const response = await axios.put(`${API_URL}/${id}`, {
+      requesterName,
+      wordCount,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("There was an error updating the translation request:", error);
+    throw error;
+  }
+};
 
+export const deleteTranslationRequest = async (id: number): Promise<void> => {
+  try {
+    await axios.delete(`${API_URL}/${id}`);
+  } catch (error) {
+    console.error("There was an error deleting the translation request:", error);
+    throw error;
+  }
+};
